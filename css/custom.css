@@ -1,0 +1,144 @@
+/* =========================================================
+   SALVIA — CUSTOM OVERRIDES
+   Objetivo:
+   - remover UI residual
+   - eliminar espaços fantasmas
+   - manter Masonry estável
+   - feed contínuo e silencioso
+========================================================= */
+
+/* ------------------------------
+   RESET DE UI (notes / share)
+-------------------------------- */
+
+.post_info,
+.post_control,
+.notecount,
+.share,
+.share_cont,
+.likes-text,
+.permalink-link {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ------------------------------
+   COLAPSO TOTAL DE ESPAÇOS
+-------------------------------- */
+
+.post,
+.post_inner,
+.post_content,
+.post-content,
+.post li,
+.post ul {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* remove espaço final de captions vazias */
+.caption {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ------------------------------
+   FIX MASONRY / ALTURA FANTASMA
+-------------------------------- */
+
+/* impede que Masonry reserve altura invisível */
+.post-content > .post_info {
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* força colapso mesmo com inline styles */
+.post-content > li,
+.post-content > li[style],
+.post-content > li.content {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+/* primeiros posts às vezes vêm com altura fixa */
+.post-content > li:nth-child(1),
+.post-content > li:nth-child(2),
+.post-content > li:nth-child(3) {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+/* ------------------------------
+   IMAGENS
+-------------------------------- */
+
+/* garante proporção natural */
+.image_resized.post-height-auto 
+#layout .post .photo img {
+    height: auto !important;
+    width: 100%;
+    display: block;
+}
+
+/* remove hover decorativo */
+.top-hover-deco {
+    display: none !important;
+}
+
+/* ------------------------------
+   TAGS (opcional)
+-------------------------------- */
+
+/* descomente se quiser feed 100% limpo */
+/*
+.tags {
+    display: none !important;
+}
+*/
+
+/* ------------------------------
+   LINKS LIMPOS
+-------------------------------- */
+
+a {
+    text-decoration: none;
+    border: none;
+}
+
+.link-border .post-content a {
+    border-bottom: 0 !important;
+}
+
+/* ------------------------------
+   MOBILE
+-------------------------------- */
+
+.mobile-version #posts .post-content {
+    margin: 0 !important;
+}
+
+.mobile-version #layout {
+    padding: 8px !important;
+}
+
+/* ------------------------------
+   FOOTER DISCRETO
+-------------------------------- */
+
+footer {
+    font-size: 10pt;
+    opacity: 0.8;
+}
+
+/* =========================================================
+   FIM
+========================================================= */
