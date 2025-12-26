@@ -143,24 +143,38 @@ footer {
    FIM
 ========================================================= */
 
-/* =========================================================
-   DESATIVAÇÃO VISUAL DO MASONRY
-   (sem mexer em JS ainda)
-========================================================= */
+/* =========================================
+   FIX REAL — espaço extra nos primeiros posts
+========================================= */
 
-/* === FIX: espaço fantasma nos primeiros posts === */
-
-#posts .post:nth-child(1),
-#posts .post:nth-child(2),
-#posts .post:nth-child(3) {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+/* força o container a não reservar altura */
+#posts,
+#posts .post,
+#posts .post-content,
+#posts .post_inner {
     height: auto !important;
+    min-height: 0 !important;
 }
 
-/* força o navegador a recalcular o box */
-#posts .post:nth-child(-n+3) {
-    transform: translateZ(0);
+/* remove qualquer cálculo inline inicial */
+#posts .post[style],
+#posts .post-content[style],
+#posts .post_inner[style] {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+/* neutraliza container que mede imagem antes do load */
+#posts .photo,
+#posts .photo-wrapper,
+#posts .photo-wrap {
+    line-height: 0 !important;
+}
+
+/* garante que imagem define a altura real */
+#posts img {
+    display: block;
+    height: auto !important;
 }
 
 
