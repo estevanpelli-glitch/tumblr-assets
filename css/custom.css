@@ -168,3 +168,9 @@ footer {
 .post-content {
     height: auto !important;
 }
+
+/* garante layout sem dependência de JS */
+#posts {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+}
