@@ -148,20 +148,6 @@ footer {
    (sem mexer em JS ainda)
 ========================================================= */
 
-#posts,
-.post-content,
-.post-content > ul,
-.post-content > li {
-    display: block !important;
-    position: static !important;
-}
 
-/* remove cálculos de coluna */
-.post-content > li {
-    width: 100% !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-}
 
 
